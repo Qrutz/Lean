@@ -1,0 +1,329 @@
+2025-08-08T14:49:10.5447670Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Mac
+2025-08-08T14:49:10.5530770Z TRACE:: Engine.Main(): Started 4:49 PM
+2025-08-08T14:49:10.5547730Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-08-08T14:49:10.5623710Z TRACE:: JobQueue.NextJob(): Selected QuantConnect.Algorithm.CSharp.dll
+2025-08-08T14:49:10.5699640Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-08-08T14:49:10.5699950Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-08-08T14:49:10.5700050Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-08-08T14:49:10.5705790Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-08-08T14:49:10.5705940Z TRACE:: Config.GetValue(): storage-file-count - Using default value: 10000
+2025-08-08T14:49:10.5710760Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-08-08T14:49:10.5711010Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-id - Using default value: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:49:10.5711250Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-08-08T14:49:10.5711350Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-08-08T14:49:21.0177280Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Mac
+2025-08-08T14:49:21.0247620Z TRACE:: Engine.Main(): Started 4:49 PM
+2025-08-08T14:49:21.0257890Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-08-08T14:49:21.0307590Z TRACE:: JobQueue.NextJob(): Selected QuantConnect.Algorithm.CSharp.dll
+2025-08-08T14:49:21.0370140Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-08-08T14:49:21.0370410Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-08-08T14:49:21.0370510Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-08-08T14:49:21.0374890Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-08-08T14:49:21.0375010Z TRACE:: Config.GetValue(): storage-file-count - Using default value: 10000
+2025-08-08T14:49:21.0378570Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-08-08T14:49:21.0378700Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-id - Using default value: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:49:21.0378880Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-08-08T14:49:21.0378950Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-08-08T14:49:39.6097290Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Mac
+2025-08-08T14:49:39.6171730Z TRACE:: Engine.Main(): Started 4:49 PM
+2025-08-08T14:49:39.6183960Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-08-08T14:49:39.6246440Z TRACE:: JobQueue.NextJob(): Selected QuantConnect.Algorithm.CSharp.dll
+2025-08-08T14:49:39.6316820Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-08-08T14:49:39.6317150Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-08-08T14:49:39.6317280Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-08-08T14:49:39.6322140Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-08-08T14:49:39.6322300Z TRACE:: Config.GetValue(): storage-file-count - Using default value: 10000
+2025-08-08T14:49:39.6326200Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-08-08T14:49:39.6326300Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-id - Using default value: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:49:39.6326500Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-08-08T14:49:39.6326570Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-08-08T14:49:39.6340360Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2025-08-08T14:49:39.6341300Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2025-08-08T14:49:39.6341610Z TRACE:: Config.Get(): Configuration key not found. Key: out-of-sample-max-end-date - Using default value: 
+2025-08-08T14:49:39.6341700Z TRACE:: Config.GetValue(): out-of-sample-days - Using default value: 0
+2025-08-08T14:49:39.6346240Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2025-08-08T14:49:39.6346330Z TRACE:: Config.Get(): Configuration key not found. Key: data-monitor - Using default value: QuantConnect.Data.DataMonitor
+2025-08-08T14:49:39.6397740Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2025-08-08T14:49:39.6425870Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-08-08T14:49:39.6429690Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2025-08-08T14:49:39.6437420Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2025-08-08T14:49:39.6441430Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2025-08-08T14:49:39.6465920Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2025-08-08T14:49:39.6474680Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2025-08-08T14:49:39.6475620Z TRACE:: Extensions.IsDirectoryEmpty(): directory '../../../Data/symbol-properties' not found or empty
+2025-08-08T14:49:39.6476450Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2025-08-08T14:49:39.6580820Z ERROR:: Engine.Run():  System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in Engine/Engine.cs:line 112
+2025-08-08T14:49:39.6585750Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     
+         Brokerage:            
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2025-08-08T14:49:39.6588640Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2025-08-08T14:49:39.6590600Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2025-08-08T14:49:39.6597910Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2025-08-08T14:49:39.6608320Z ERROR:: Algorithm.Initialize() Error: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv) Stack Trace: System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+ System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+2025-08-08T14:49:39.6609050Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Users/qrutz/Lean/BasicTemplateFrameworkAlgorithm-log.txt
+2025-08-08T14:49:39.6609100Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2025-08-08T14:49:39.6632460Z TRACE:: BacktestingResultHandler.CreateResultSummary(): 'Strategy Equity' chart not found
+2025-08-08T14:49:39.6964910Z TRACE:: 
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2025-08-08T14:49:39.6965140Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2025-08-08T14:49:39.6966280Z TRACE:: Engine.Run(): Disposing of setup handler...
+2025-08-08T14:49:39.6966450Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2025-08-08T14:49:39.6970670Z TRACE:: Config.GetValue(): close-automatically - Using default value: False
+2025-08-08T14:49:59.2089190Z TRACE:: Engine.Main(): Packet removed from queue: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:49:59.2100620Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2025-08-08T14:49:59.2103850Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2025-08-08T14:49:59.2105360Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2025-08-08T14:49:59.2110380Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
+2025-08-08T14:50:23.8028000Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Mac
+2025-08-08T14:50:23.8102150Z TRACE:: Engine.Main(): Started 4:50 PM
+2025-08-08T14:50:23.8112140Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-08-08T14:50:23.8167650Z TRACE:: JobQueue.NextJob(): Selected QuantConnect.Algorithm.CSharp.dll
+2025-08-08T14:50:23.8234760Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-08-08T14:50:23.8235010Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-08-08T14:50:23.8235100Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-08-08T14:50:23.8239460Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-08-08T14:50:23.8239550Z TRACE:: Config.GetValue(): storage-file-count - Using default value: 10000
+2025-08-08T14:50:23.8243150Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-08-08T14:50:23.8243260Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-id - Using default value: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:50:23.8243440Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-08-08T14:50:23.8243510Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-08-08T14:50:23.8255720Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2025-08-08T14:50:23.8256490Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2025-08-08T14:50:23.8256860Z TRACE:: Config.Get(): Configuration key not found. Key: out-of-sample-max-end-date - Using default value: 
+2025-08-08T14:50:23.8256930Z TRACE:: Config.GetValue(): out-of-sample-days - Using default value: 0
+2025-08-08T14:50:23.8260950Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2025-08-08T14:50:23.8261020Z TRACE:: Config.Get(): Configuration key not found. Key: data-monitor - Using default value: QuantConnect.Data.DataMonitor
+2025-08-08T14:50:23.8311960Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2025-08-08T14:50:23.8352290Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-08-08T14:50:23.8356500Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2025-08-08T14:50:23.8365110Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2025-08-08T14:50:23.8369530Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2025-08-08T14:50:23.8392720Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2025-08-08T14:50:23.8399550Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2025-08-08T14:50:23.8401250Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2025-08-08T14:50:23.8402560Z TRACE:: Extensions.IsDirectoryEmpty(): directory '../../../Data/symbol-properties' not found or empty
+2025-08-08T14:50:23.8511000Z ERROR:: Engine.Run():  System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in Engine/Engine.cs:line 112
+2025-08-08T14:50:23.8515100Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     
+         Brokerage:            
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2025-08-08T14:50:23.8517930Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2025-08-08T14:50:23.8519760Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2025-08-08T14:50:23.8527050Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2025-08-08T14:50:23.8538700Z ERROR:: Algorithm.Initialize() Error: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv) Stack Trace: System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+ System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+2025-08-08T14:50:23.8539150Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Users/qrutz/Lean/BasicTemplateFrameworkAlgorithm-log.txt
+2025-08-08T14:50:23.8539190Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2025-08-08T14:50:23.8565000Z TRACE:: BacktestingResultHandler.CreateResultSummary(): 'Strategy Equity' chart not found
+2025-08-08T14:50:23.8903900Z TRACE:: 
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2025-08-08T14:50:23.8904110Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2025-08-08T14:50:23.8905220Z TRACE:: Engine.Run(): Disposing of setup handler...
+2025-08-08T14:50:23.8905390Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2025-08-08T14:50:23.8909530Z TRACE:: Config.GetValue(): close-automatically - Using default value: False
+2025-08-08T14:51:07.9511750Z TRACE:: Engine.Main(): Packet removed from queue: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:51:07.9521870Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2025-08-08T14:51:07.9524660Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2025-08-08T14:51:07.9526360Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2025-08-08T14:51:07.9530510Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.
+2025-08-08T14:51:52.3015820Z TRACE:: Engine.Main(): LEAN ALGORITHMIC TRADING ENGINE v2.5.0.0 Mode: DEBUG (64bit) Host: Mac
+2025-08-08T14:51:52.3088890Z TRACE:: Engine.Main(): Started 4:51 PM
+2025-08-08T14:51:52.3100760Z TRACE:: Config.Get(): Configuration key not found. Key: lean-manager-type - Using default value: LocalLeanManager
+2025-08-08T14:51:52.3154780Z TRACE:: JobQueue.NextJob(): Selected QuantConnect.Algorithm.CSharp.dll
+2025-08-08T14:51:52.3221700Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-capacity - Using default value: 120
+2025-08-08T14:51:52.3221980Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-time-interval-minutes - Using default value: 1440
+2025-08-08T14:51:52.3222100Z TRACE:: Config.GetValue(): scheduled-event-leaky-bucket-refill-amount - Using default value: 18
+2025-08-08T14:51:52.3226120Z TRACE:: Config.GetValue(): storage-limit - Using default value: 10737418240
+2025-08-08T14:51:52.3226210Z TRACE:: Config.GetValue(): storage-file-count - Using default value: 10000
+2025-08-08T14:51:52.3229310Z TRACE:: Config.GetValue(): storage-permissions - Using default value: Read=True Write=True Delete=True
+2025-08-08T14:51:52.3229400Z TRACE:: Config.Get(): Configuration key not found. Key: algorithm-id - Using default value: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:51:52.3229580Z TRACE:: Config.Get(): Configuration key not found. Key: optimization-id - Using default value: 
+2025-08-08T14:51:52.3229660Z TRACE:: Config.Get(): Configuration key not found. Key: backtest-name - Using default value: local
+2025-08-08T14:51:52.3243160Z TRACE:: Config.Get(): Configuration key not found. Key: data-channel - Using default value: 
+2025-08-08T14:51:52.3244170Z TRACE:: Config.Get(): Configuration key not found. Key: python-venv - Using default value: 
+2025-08-08T14:51:52.3244490Z TRACE:: Config.Get(): Configuration key not found. Key: out-of-sample-max-end-date - Using default value: 
+2025-08-08T14:51:52.3244590Z TRACE:: Config.GetValue(): out-of-sample-days - Using default value: 0
+2025-08-08T14:51:52.3248970Z TRACE:: Config.Get(): Configuration key not found. Key: data-permission-manager - Using default value: DataPermissionManager
+2025-08-08T14:51:52.3249060Z TRACE:: Config.Get(): Configuration key not found. Key: data-monitor - Using default value: QuantConnect.Data.DataMonitor
+2025-08-08T14:51:52.3299140Z TRACE:: Config.GetValue(): algorithm-creation-timeout - Using default value: 90
+2025-08-08T14:51:52.3333430Z TRACE:: Config.GetValue(): zip-data-cache-provider - Using default value: 10
+2025-08-08T14:51:52.3337470Z TRACE:: Config.Get(): Configuration key not found. Key: fundamental-data-provider - Using default value: CoarseFundamentalDataProvider
+2025-08-08T14:51:52.3344100Z TRACE:: AlgorithmManager.CreateTokenBucket(): Initializing LeakyBucket: Capacity: 120 RefillAmount: 18 TimeInterval: 1440
+2025-08-08T14:51:52.3347820Z TRACE:: Config.GetValue(): algorithm-manager-time-loop-maximum - Using default value: 20
+2025-08-08T14:51:52.3368350Z TRACE:: Config.GetValue(): downloader-data-update-period - Using default value: 7
+2025-08-08T14:51:52.3376590Z TRACE:: Extensions.IsDirectoryEmpty(): directory '../../../Data/symbol-properties' not found or empty
+2025-08-08T14:51:52.3376670Z TRACE:: Engine.Run(): Resource limits '0' CPUs. 2147483647 MB RAM.
+2025-08-08T14:51:52.3378140Z TRACE:: TextSubscriptionDataSourceReader.SetCacheSize(): Setting cache size to 71582788 items
+2025-08-08T14:51:52.3464440Z ERROR:: Engine.Run():  System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in Engine/Engine.cs:line 112
+2025-08-08T14:51:52.3468360Z TRACE:: JOB HANDLERS:
+         DataFeed:             QuantConnect.Lean.Engine.DataFeeds.FileSystemDataFeed
+         Setup:                QuantConnect.Lean.Engine.Setup.BacktestingSetupHandler
+         RealTime:             QuantConnect.Lean.Engine.RealTime.BacktestingRealTimeHandler
+         Results:              QuantConnect.Lean.Engine.Results.BacktestingResultHandler
+         Transactions:         QuantConnect.Lean.Engine.TransactionHandlers.BacktestingTransactionHandler
+         Object Store:         QuantConnect.Lean.Engine.Storage.LocalObjectStore
+         History Provider:     
+         Brokerage:            
+         Data Provider:        QuantConnect.Lean.Engine.DataFeeds.DefaultDataProvider
+
+2025-08-08T14:51:52.3473540Z TRACE:: BacktestingResultHandler.Exit(): starting...
+2025-08-08T14:51:52.3476150Z TRACE:: BacktestingResultHandler.Exit(): Saving logs...
+2025-08-08T14:51:52.3482140Z TRACE:: StopSafely(): Waiting for 'Result Thread' thread to stop...
+2025-08-08T14:51:52.3494640Z ERROR:: Algorithm.Initialize() Error: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv) Stack Trace: System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+ System.AggregateException: One or more errors occurred. (Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv)
+ ---> System.IO.FileNotFoundException: Unable to locate symbol properties file: ../../../Data/symbol-properties/symbol-properties-database.csv
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromCsvFile(String file)+MoveNext() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 211
+   at QuantConnect.Securities.SymbolPropertiesDatabase..ctor(String file) in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 41
+   at QuantConnect.Securities.SymbolPropertiesDatabase.FromDataFolder() in /Users/qrutz/Lean/Common/Securities/SymbolPropertiesDatabase.cs:line 195
+   at QuantConnect.Lean.Engine.Engine.StaticInitializations() in /Users/qrutz/Lean/Engine/Engine.cs:line 550
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at QuantConnect.Lean.Engine.Engine.Run(AlgorithmNodePacket job, AlgorithmManager manager, String assemblyPath, WorkerThread workerThread) in /Users/qrutz/Lean/Engine/Engine.cs:line 112
+2025-08-08T14:51:52.3495220Z TRACE:: Debug: Your log was successfully created and can be retrieved from: /Users/qrutz/Lean/BasicTemplateFrameworkAlgorithm-log.txt
+2025-08-08T14:51:52.3495270Z TRACE:: BacktestingResultHandler.Run(): Ending Thread...
+2025-08-08T14:51:52.3520350Z TRACE:: BacktestingResultHandler.CreateResultSummary(): 'Strategy Equity' chart not found
+2025-08-08T14:51:52.3842410Z TRACE:: 
+STATISTICS:: OrderListHash d41d8cd98f00b204e9800998ecf8427e
+2025-08-08T14:51:52.3842580Z TRACE:: BacktestingResultHandler.SendAnalysisResult(): Processed final packet
+2025-08-08T14:51:52.3843550Z TRACE:: Engine.Run(): Disposing of setup handler...
+2025-08-08T14:51:52.3843770Z TRACE:: Engine.Main(): Analysis Completed and Results Posted.
+2025-08-08T14:51:52.3847300Z TRACE:: Config.GetValue(): close-automatically - Using default value: False
+2025-08-08T14:52:00.1417550Z TRACE:: Engine.Main(): Packet removed from queue: BasicTemplateFrameworkAlgorithm
+2025-08-08T14:52:00.1419960Z TRACE:: LeanEngineSystemHandlers.Dispose(): start...
+2025-08-08T14:52:00.1422960Z TRACE:: LeanEngineSystemHandlers.Dispose(): Disposed of system handlers.
+2025-08-08T14:52:00.1425000Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): start...
+2025-08-08T14:52:00.1431330Z TRACE:: LeanEngineAlgorithmHandlers.Dispose(): Disposed of algorithm handlers.

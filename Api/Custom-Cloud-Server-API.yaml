@@ -1,0 +1,1201 @@
+openapi: 3.0.0
+info:
+    description: "Custom Cloud Server API for Algorithmic Trading Platform. This API provides project management, backtesting, and live trading capabilities for your custom cloud infrastructure."
+    version: 1.0.0
+    title: Custom Cloud Server API v1.0
+    termsOfService: "https://your-cloud-server.com/terms"
+    contact:
+        name: Your Cloud Server
+        email: support@your-cloud-server.com
+    license:
+        name: Custom License
+
+servers:
+    - url: "https://your-cloud-server.com/api/v2"
+      description: "Primary REST Endpoint"
+
+security:
+    - bearerAuth: []
+    - apiKeyAuth: []
+
+paths:
+    # Authentication endpoint
+    "/authenticate":
+        get:
+            summary: "Authenticate with the API"
+            tags:
+                - Authentication
+            responses:
+                "200":
+                    description: "Authentication successful"
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    success:
+                                        type: boolean
+                                    message:
+                                        type: string
+                "401":
+                    description: "Authentication failed"
+
+    # Create a new project
+    "/projects/create":
+        post:
+            summary: "Create a project with the specified name and language."
+            tags:
+                - Project Management
+            requestBody:
+                description: "Name and language of the project to create."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: "Project name"
+                                language:
+                                    type: string
+                                    enum: ["C#", "Py"]
+                                    description: "Programming language"
+            responses:
+                "200":
+                    description: "Project created successfully"
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/ProjectResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Read project details
+    "/projects/read":
+        post:
+            summary: "Read details about a single project or list all projects."
+            tags:
+                - Project Management
+            requestBody:
+                description: "The projectId for the project to read, or nothing to get a list of all projects."
+                required: False
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                    description: "Project ID to read"
+            responses:
+                "200":
+                    description: "Project details or list"
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/ProjectResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Update a project
+    "/projects/update":
+        post:
+            summary: "Update a project name or details."
+            tags:
+                - Project Management
+            requestBody:
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                name:
+                                    type: string
+                                description:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Delete a project
+    "/projects/delete":
+        post:
+            summary: "Delete a project."
+            tags:
+                - Project Management
+            requestBody:
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Add a file to a project
+    "/files/create":
+        post:
+            summary: "Add a file to given project."
+            tags:
+                - File Management
+            requestBody:
+                description: "Project, file name and file content to create"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                name:
+                                    type: string
+                                content:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/ProjectFilesResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Read files
+    "/files/read":
+        post:
+            summary: "Read one file or multiple files in a project."
+            tags:
+                - File Management
+            requestBody:
+                description: "Project ID and optional file name"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                fileName:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/ProjectFilesResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Update files
+    "/files/update":
+        post:
+            summary: "Update file name or contents."
+            tags:
+                - File Management
+            requestBody:
+                description: "File update information"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            oneOf:
+                                - type: object
+                                  properties:
+                                      projectId:
+                                          type: integer
+                                      oldFileName:
+                                          type: string
+                                      newFileName:
+                                          type: string
+                                - type: object
+                                  properties:
+                                      projectId:
+                                          type: integer
+                                      fileName:
+                                          type: string
+                                      newFileContents:
+                                          type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Delete a file
+    "/files/delete":
+        post:
+            summary: "Delete a file in a project"
+            tags:
+                - File Management
+            requestBody:
+                description: "Project Id and filename to specify the file for deletion."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                name:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Create compile job
+    "/compile/create":
+        post:
+            summary: "Create a compile job request for a project"
+            tags:
+                - Compiling Code
+            requestBody:
+                description: "Project Id specifying project to build."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/CompileResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Read compile result
+    "/compile/read":
+        post:
+            summary: "Read a compile job result."
+            tags:
+                - Compiling Code
+            requestBody:
+                description: "Read a compile result for a specific Project Id and Compile Id."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                compileId:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/CompileResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Create backtest
+    "/backtests/create":
+        post:
+            summary: "Create a new backtest request and get the backtest Id."
+            tags:
+                - Backtest Management
+            requestBody:
+                description: "Create a new backtest given a project Id and compile Id."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                compileId:
+                                    type: string
+                                backtestName:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/BacktestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Read backtests
+    "/backtests/read":
+        post:
+            summary: "Read one or multiple backtests from the project"
+            tags:
+                - Backtest Management
+            requestBody:
+                description: "Fetch the results for the project Id and optional backtest Id."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                backtestId:
+                                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                oneOf:
+                                    - $ref: "#/components/responses/BacktestResponse"
+                                    - $ref: "#/components/responses/BacktestList"
+                "401":
+                    description: "Unauthorized"
+
+    # Read backtest report
+    "/backtests/read/report":
+        post:
+            summary: "Read out the report of a backtest"
+            tags:
+                - Backtest Management
+            requestBody:
+                description: "Project and backtest information"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                backtestId:
+                                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                oneOf:
+                                    - $ref: "#/components/responses/BacktestReport"
+                                    - $ref: "#/components/responses/RequestFailedError"
+                "401":
+                    description: "Unauthorized"
+
+    # Update backtest
+    "/backtests/update":
+        post:
+            summary: "Update a backtest name or note"
+            tags:
+                - Backtest Management
+            requestBody:
+                description: "Backtest update information"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                backtestId:
+                                    type: string
+                                name:
+                                    type: string
+                                note:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Delete backtest
+    "/backtests/delete":
+        post:
+            summary: "Delete a backtest"
+            tags:
+                - Backtest Management
+            requestBody:
+                description: "Information required to delete the backtest."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                backtestId:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Create live algorithm
+    "/live/create":
+        post:
+            summary: "Create a live algorithm"
+            tags:
+                - Live Management
+            requestBody:
+                description: "Project, compile and brokerage information for deploying a live algorithm."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                compileId:
+                                    type: string
+                                serverType:
+                                    type: string
+                                baseLiveAlgorithmSettings:
+                                    type: object
+                                versionId:
+                                    type: string
+                                dataProviders:
+                                    type: object
+            responses:
+                "200":
+                    $ref: "#/components/responses/LiveAlgorithm"
+                "401":
+                    description: "Unauthorized"
+
+    # Read live algorithms
+    "/live/read":
+        post:
+            summary: "Read live algorithm details or list live algorithms"
+            tags:
+                - Live Management
+            requestBody:
+                description: "Live algorithm query information"
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            oneOf:
+                                - type: object
+                                  properties:
+                                      projectId:
+                                          type: integer
+                                      deployId:
+                                          type: string
+                                - type: object
+                                  properties:
+                                      status:
+                                          type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                oneOf:
+                                    - $ref: "#/components/responses/LiveAlgorithmResults"
+                                    - $ref: "#/components/responses/LiveList"
+                "401":
+                    description: "Unauthorized"
+
+    # Stop live algorithm
+    "/live/update/stop":
+        post:
+            summary: "Stop a live algorithm"
+            tags:
+                - Live Management
+            requestBody:
+                description: "Information about the live algorithm to stop."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Liquidate live algorithm
+    "/live/update/liquidate":
+        post:
+            summary: "Liquidate a live algorithm"
+            tags:
+                - Live Management
+            requestBody:
+                description: "Information about the live algorithm to liquidate."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/RestResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Read live logs
+    "/live/read/log":
+        post:
+            summary: "Get the logs of a specific live algorithm."
+            tags:
+                - Live Management
+            requestBody:
+                description: "Information about the algorithm to read live logs from."
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                projectId:
+                                    type: integer
+                                algorithmId:
+                                    type: string
+                                start:
+                                    type: integer
+                                end:
+                                    type: integer
+            responses:
+                "200":
+                    $ref: "#/components/responses/ReadLiveLogsResponse"
+                "401":
+                    description: "Unauthorized"
+
+    # Data download
+    "/data/read":
+        post:
+            summary: "Get data download link"
+            tags:
+                - Downloading Data
+            requestBody:
+                required: True
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                format:
+                                    type: string
+                                ticker:
+                                    type: string
+                                type:
+                                    type: string
+                                resolution:
+                                    type: string
+                                market:
+                                    type: string
+                                date:
+                                    type: string
+            responses:
+                "200":
+                    $ref: "#/components/responses/ReadDataLinkResponse"
+                "401":
+                    description: "Unauthorized"
+
+components:
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+        apiKeyAuth:
+            type: apiKey
+            in: header
+            name: X-API-Key
+
+    responses:
+        RestResponse:
+            description: "Base API response class."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/RestResponse"
+
+        ProjectResponse:
+            description: "Project response."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ProjectResponse"
+
+        ProjectFilesResponse:
+            description: "Project files response."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ProjectFilesResponse"
+
+        CompileResponse:
+            description: "Response from the compiler on a build event."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/CompileResponse"
+
+        BacktestResponse:
+            description: "Backtest response packet."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/BacktestResponse"
+
+        BacktestList:
+            description: "Collection container for a list of backtests for a project."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/BacktestList"
+
+        BacktestReport:
+            description: "Backtest Report Response wrapper."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/BacktestReport"
+
+        LiveAlgorithm:
+            description: "Live algorithm instance result."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/LiveAlgorithm"
+
+        LiveAlgorithmResults:
+            description: "Details a live algorithm from the live/read API endpoint."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/LiveAlgorithmResults"
+
+        LiveList:
+            description: "List of the live algorithms running which match the requested status."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/LiveList"
+
+        ReadLiveLogsResponse:
+            description: "Logs from a live algorithm."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ReadLiveLogsResponse"
+
+        ReadDataLinkResponse:
+            description: "Response from reading data."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/ReadDataLinkResponse"
+
+        RequestFailedError:
+            description: "Request Failed."
+            content:
+                application/json:
+                    schema:
+                        $ref: "#/components/schemas/RequestFailedError"
+
+    schemas:
+        RestResponse:
+            description: "Base API response class for the Custom Cloud Server API."
+            type: object
+            properties:
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        ProjectResponse:
+            description: "Project response."
+            type: object
+            properties:
+                projects:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/Project"
+                    description: "List of projects for the authenticated user."
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        Project:
+            description: "Project information."
+            type: object
+            properties:
+                projectId:
+                    type: integer
+                    description: "Project id."
+                name:
+                    type: string
+                    description: "Name of the project."
+                created:
+                    type: string
+                    format: date-time
+                    description: "Date the project was created."
+                modified:
+                    type: string
+                    format: date-time
+                    description: "Modified date for the project."
+                language:
+                    type: string
+                    enum:
+                        - "C#"
+                        - "Py"
+                    description: "Programming language of the project."
+
+        ProjectFilesResponse:
+            description: "Response received when reading files from a project."
+            type: object
+            properties:
+                files:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/ProjectFile"
+                    description: "List of project file information."
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        ProjectFile:
+            description: "File for a project."
+            type: object
+            properties:
+                name:
+                    description: "Name of a project file."
+                    type: string
+                content:
+                    description: "Contents of the project file."
+                    type: string
+                modified:
+                    description: "DateTime project file was modified."
+                    type: string
+                    format: date-time
+
+        CompileResponse:
+            description: "Response from the compiler on a build event."
+            type: object
+            properties:
+                compileId:
+                    type: string
+                    description: "Compile Id for a successful build."
+                state:
+                    type: string
+                    enum:
+                        - "InQueue"
+                        - "BuildSuccess"
+                        - "BuildError"
+                    description: "Compile state."
+                logs:
+                    type: array
+                    items:
+                        type: string
+                    description: "Logs of the compilation request."
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        BacktestResponse:
+            description: "Packet container for carrying Backtest results."
+            type: object
+            properties:
+                name:
+                    type: string
+                    description: "Name of the backtest."
+                note:
+                    type: string
+                    description: "Note on the backtest attached by the user."
+                backtestId:
+                    type: string
+                    description: "Assigned backtest Id"
+                completed:
+                    type: boolean
+                    description: "Boolean true when the backtest is completed."
+                progress:
+                    type: number
+                    format: float
+                    description: "Progress of the backtest in percent 0-1"
+                result:
+                    $ref: "#/components/schemas/BacktestResult"
+                error:
+                    type: string
+                    description: "Backtest error message."
+                stacktrace:
+                    type: string
+                    description: "Backtest error stacktrace."
+                created:
+                    type: string
+                    format: date-time
+                    description: "Backtest creation date and time."
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        BacktestList:
+            description: "Collection container for a list of Backtest objects for a project."
+            type: object
+            properties:
+                backtests:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/BacktestResponse"
+                    description: "Array of BacktestResponse objects"
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        BacktestResult:
+            description: "Results object class. Results are exhaust from backtest or live algorithms running."
+            type: object
+            properties:
+                TotalPerformance:
+                    $ref: "#/components/schemas/AlgorithmPerformance"
+                Charts:
+                    type: object
+                    additionalProperties:
+                        $ref: "#/components/schemas/Chart"
+                    description: "Charts updates for the live algorithm since the last result packet."
+                Orders:
+                    type: object
+                    additionalProperties:
+                        $ref: "#/components/schemas/Order"
+                    description: "Order updates since the last result packet."
+                Statistics:
+                    type: object
+                    additionalProperties:
+                        type: string
+                    description: "Statistics information sent during the algorithm operations."
+
+        AlgorithmPerformance:
+            description: "The AlgorithmPerformance class is a wrapper for TradeStatistics and PortfolioStatistics."
+            type: object
+            properties:
+                TradeStatistics:
+                    $ref: "#/components/schemas/TradeStatistics"
+                PortfolioStatistics:
+                    $ref: "#/components/schemas/PortfolioStatistics"
+
+        TradeStatistics:
+            description: "A set of statistics calculated from a list of closed trades."
+            type: object
+            properties:
+                TotalNumberOfTrades:
+                    description: "The total number of trades."
+                    type: integer
+                WinRate:
+                    description: "The ratio of the number of winning trades to the total number of trades."
+                    type: number
+                    format: float
+
+        PortfolioStatistics:
+            description: "Represents a set of statistics calculated from equity and benchmark samples."
+            type: object
+            properties:
+                TotalNetProfit:
+                    description: "The total net profit percentage."
+                    type: number
+                    format: float
+                SharpeRatio:
+                    description: "Sharpe ratio with respect to risk free rate: measures excess of return per unit of risk."
+                    type: number
+                    format: float
+
+        Chart:
+            description: "Single Parent Chart Object for Custom Charting."
+            type: object
+            properties:
+                Name:
+                    description: "Name of the Chart."
+                    type: string
+                ChartType:
+                    description: "Type of the Chart, Overlayed or Stacked."
+                    type: string
+                    enum:
+                        - "Overlay"
+                        - "Stacked"
+                Series:
+                    description: "List of Series Objects for this Chart."
+                    type: object
+                    additionalProperties:
+                        $ref: "#/components/schemas/Series"
+
+        Series:
+            description: "Chart Series Object - Series data and properties for a chart."
+            type: object
+            properties:
+                Name:
+                    description: "Name of the series."
+                    type: string
+                Unit:
+                    description: "Axis for the chart series."
+                    type: string
+                Values:
+                    description: "Values for the series plot."
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/ChartPoint"
+
+        ChartPoint:
+            description: "Location on a chart containing the X-Y location"
+            type: object
+            properties:
+                x:
+                    description: "Time of this chart point."
+                    type: string
+                y:
+                    description: "Value of this chart point."
+                    type: number
+                    format: float
+
+        Order:
+            description: "Order struct for placing new trade."
+            type: object
+            properties:
+                Id:
+                    description: "Order ID."
+                    type: integer
+                Symbol:
+                    type: object
+                    properties:
+                        Value:
+                            type: string
+                Price:
+                    description: "Price of the Order."
+                    type: number
+                    format: float
+                Quantity:
+                    description: "Number of shares to execute."
+                    type: number
+                    format: float
+                Type:
+                    description: "Order type."
+                    type: string
+                    enum:
+                        - "Market"
+                        - "Limit"
+                        - "StopMarket"
+                        - "StopLimit"
+                Status:
+                    description: "Status of the Order."
+                    type: string
+                    enum:
+                        - "New"
+                        - "Submitted"
+                        - "PartiallyFilled"
+                        - "Filled"
+                        - "Canceled"
+
+        BacktestReport:
+            description: "Backtest Report Response wrapper."
+            type: object
+            properties:
+                report:
+                    description: "HTML data of the report with embedded base64 images."
+                    type: string
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        LiveAlgorithm:
+            description: "Live algorithm instance result."
+            type: object
+            properties:
+                projectId:
+                    description: "Project id for the live instance."
+                    type: integer
+                deployId:
+                    description: "Unique live algorithm deployment identifier."
+                    type: string
+                status:
+                    type: string
+                    enum:
+                        - "DeployError"
+                        - "InQueue"
+                        - "Running"
+                        - "Stopped"
+                        - "Liquidated"
+                        - "Deleted"
+                        - "Completed"
+                        - "RuntimeError"
+                        - "Invalid"
+                        - "LoggingIn"
+                        - "Initializing"
+                launched:
+                    description: "Datetime the algorithm was launched in UTC."
+                    type: string
+                    format: date-time
+                stopped:
+                    description: "Datetime the algorithm was stopped in UTC, null if its still running."
+                    type: string
+                    format: date-time
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        LiveAlgorithmResults:
+            description: "Details a live algorithm from the live/read API endpoint."
+            type: object
+            properties:
+                LiveResults:
+                    $ref: "#/components/schemas/LiveResultsData"
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        LiveResultsData:
+            description: "Holds information about the state and operation of the live running algorithm."
+            type: object
+            properties:
+                version:
+                    description: "Results version."
+                    type: integer
+                results:
+                    $ref: "#/components/schemas/LiveResult"
+
+        LiveResult:
+            description: "Live results object class for packaging live result data."
+            type: object
+            properties:
+                Holdings:
+                    description: "Dictionary of algorithm holdings information."
+                    type: object
+                Cash:
+                    type: object
+                Charts:
+                    type: object
+                    additionalProperties:
+                        $ref: "#/components/schemas/Chart"
+                    description: "Charts updates for the live algorithm since the last result packet."
+                Orders:
+                    type: object
+                    additionalProperties:
+                        $ref: "#/components/schemas/Order"
+                    description: "Order updates since the last result packet."
+                Statistics:
+                    type: object
+                    additionalProperties:
+                        type: string
+                    description: "Statistics information sent during the algorithm operations."
+
+        LiveList:
+            description: "List of the live algorithms running which match the requested status."
+            type: object
+            properties:
+                Algorithms:
+                    description: "Algorithm list matching the requested status."
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/LiveAlgorithm"
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        ReadLiveLogsResponse:
+            description: "Logs from a live algorithm."
+            type: object
+            properties:
+                LiveLogs:
+                    description: "List of logs from the live algorithm."
+                    type: array
+                    items:
+                        type: string
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        ReadDataLinkResponse:
+            description: "Response from reading data."
+            type: object
+            properties:
+                link:
+                    description: "Link to the data."
+                    type: string
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
+
+        RequestFailedError:
+            description: "The API method call could not be completed as requested."
+            type: object
+            properties:
+                success:
+                    type: boolean
+                    description: "Indicate if the API request was successful."
+                errors:
+                    type: array
+                    items:
+                        type: string
+                    description: "List of errors with the API call."
